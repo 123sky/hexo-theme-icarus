@@ -73,11 +73,18 @@ search:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment
 comment:
   # Name of the comment plugin
-  type: gitment
+  id: '<%= page.title %>'
+  type: gitalk
   owner: 123sky # (required) GitHub user name
   repo: blog # (required) GitHub repository name
   client_id: f869a0bd3d2498f1db9f # (required) OAuth application client id
   client_secret: b527272626a86eac38460c0a75d49055ed7f6d9f # (required) OAuth application client secret
+  admin: ['123sky']
+  labels: ['Gitalk'] #GitHub issues的标签
+  perPage: 15 #每页多少个评论
+  pager_direction: last #排序方式是从旧到新（first）还是从新到旧（last）
+  create_issue_manually: false #如果当前页面没有相应的 isssue ，且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮
+  distraction_free_mode: true #是否启用快捷键(cmd|ctrl + enter) 提交评论
 # Donation entries
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Donation/
 donate:
